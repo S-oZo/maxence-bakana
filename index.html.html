@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maxence Bakana - Portfolio BTS SIO SISR</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            --primary: #0d6efd;
+            --dark: #1a1a2e;
+            --light: #f8f9fa;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f0f4f8 0%, #e0e7ff 100%);
+            scroll-behavior: smooth;
+        }
+        
+        header {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            position: relative;
+        }
+        
+        .header-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .subtitle {
+            font-size: 1.4rem;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+        
+        nav {
+            background: white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav ul {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            list-style: none;
+            padding: 1rem 0;
+        }
+        
+        nav a {
+            color: var(--dark);
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        nav a:hover {
+            color: var(--primary);
+            background: rgba(13, 110, 253, 0.1);
+            border-radius: 30px;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        
+        section {
+            margin-bottom: 5rem;
+            scroll-margin-top: 80px;
+        }
+        
+        h2 {
+            font-size: 2.8rem;
+            color: var(--dark);
+            margin-bottom: 2rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        h2:after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 4px;
+            background: var(--primary);
+            bottom: -8px;
+            left: 0;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 3rem;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 1.5rem;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--primary);
+            opacity: 0.2;
+        }
+        
+        .timeline-item {
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -3rem;
+            width: 16px;
+            height: 16px;
+            background: white;
+            border: 4px solid var(--primary);
+            border-radius: 50%;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .skill-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .skill-item:hover {
+            background: #0d6efd;
+            color: white;
+            transform: scale(1.05);
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: all 0.3s;
+        }
+        
+        .btn:hover {
+            background: #0b5ed7;
+            transform: translateY(-3px);
+        }
+        
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        
+        .letter {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-left: 6px solid var(--primary);
+            font-style: italic;
+            margin: 2rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 2.8rem; }
+            nav ul { flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="header-content">
+            <h1>BAKANA MAXENCE</h1>
+            <p class="subtitle">Étudiant en 2<sup>ème</sup> année BTS SIO SISR • Futur Technicien Infrastructure &amp; Réseaux</p>
+            <p style="margin-top: 1rem; opacity: 0.85;">Limay • Permis B • Disponible Janvier-Février 2026</p>
+        </div>
+    </header>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <ul>
+            <li><a href="#apropos">À propos</a></li>
+            <li><a href="#experiences">Expériences</a></li>
+            <li><a href="#parcours">Parcours Académique</a></li>
+            <li><a href="#bts">BTS SIO</a></li>
+            <li><a href="#competences">Compétences</a></li>
+            <li><a href="#docs">Mes Documentations</a></li>
+            <li><a href="#veille">Veille Technologique</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+
+        <!-- À PROPOS DE MOI -->
+        <section id="apropos">
+            <h2>À propos de moi</h2>
+            <div class="card">
+                <p style="font-size: 1.15rem; line-height: 1.8;">
+                    Actuellement en deuxième année de <strong>BTS Services Informatiques aux Organisations (SIO)</strong> option 
+                    <strong>Solutions d'Infrastructure, Systèmes et Réseaux (SISR)</strong> à l'école Ensitech de Cergy, 
+                    je suis à la recherche d'un stage dans le secteur de l'informatique du début du mois de Janvier à la fin du mois de Février 2026.
+                </p>
+                <p style="margin-top: 1.5rem;">
+                    Passionné par les infrastructures réseaux, la virtualisation et la cybersécurité, je souhaite consolider mes compétences 
+                    techniques tout en contribuant activement aux projets d'une entreprise innovante. Sérieux, autonome et rigoureux, 
+                    je suis motivé par l'idée d'intégrer une équipe dynamique où je pourrai mettre en pratique mes acquis.
+                </p>
+                <a href="https://github.com/S-oZo" target="_blank" class="btn">Voir mon GitHub</a>
+            </div>
+        </section>
+
+        <!-- EXPÉRIENCES PROFESSIONNELLES -->
+        <section id="experiences">
+            <h2>Expériences Professionnelles</h2>
+            
+            <div class="timeline">
+                <!-- Médiathèque -->
+                <div class="timeline-item">
+                    <div class="card">
+                        <strong>Médiathèque de Limay</strong> — Technicien de maintenance Informatique (stage)<br>
+                        <em>05/2025 - Présent</em>
+                        <ul style="margin-top: 1rem; padding-left: 1.2rem;">
+                            <li>Vérification et maintenance préventive du parc informatique</li>
+                            <li>Réinstallation de systèmes d'exploitation et logiciels</li>
+                            <li>Configuration des équipements réseau</li>
+                            <li>Mise à jour antivirus et pare-feu</li>
+                            <li>Assistance aux usagers et formation aux bonnes pratiques</li>
+                            <li>Organisation et animation d'ateliers numériques</li>
+                        </ul>
+                        <p style="margin-top: 1rem; font-weight: 600;">Lettre de recommandation de la Responsable disponible ci-dessous.</p>
+                    </div>
+                </div>
+
+                <!-- Bricorama -->
+                <div class="timeline-item">
+                    <div class="card">
+                        <strong>Bricorama, Orgeval</strong> — Équipier polyvalent<br>
+                        <em>03/2024 - 08/2024</em>
+                        <p>Caisses, facing, arrosage des plantes, soutien à l'équipe pour une productivité optimale.</p>
+                    </div>
+                </div>
+
+                <!-- Otis -->
+                <div class="timeline-item">
+                    <div class="card">
+                        <strong>Otis Line, Argenteuil</strong> — Stage découverte de métiers<br>
+                        <em>02/2020</em>
+                        <p>Découverte de la gestion de projets, suivi administratif, communication et travail en équipe.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LETTRE DE RECOMMANDATION -->
+            <div class="card" style="margin-top: 3rem;">
+                <h3 style="margin-bottom: 1.5rem;">Lettre de recommandation – Farida Zariouh (Responsable Médiathèque de Limay)</h3>
+                <div class="letter">
+                    <p>À Limay, le 22 juillet 2025</p>
+                    <p><strong>Objet :</strong> Lettre de recommandation pour Maxence Bakana</p>
+                    <br>
+                    <p>Je me permets de vous adresser cette lettre afin de vous recommander Maxence Bakana, qui a effectué un stage au sein de notre médiathèque, dans le service numérique.</p>
+                    <p>Durant toute la durée de son stage, Maxence s'est distingué par son sérieux, son implication et son intérêt sincère pour les missions qui lui ont été confiées. Il a su s'adapter rapidement à notre environnement de travail et comprendre les enjeux liés à la médiation numérique au sein d'un établissement culturel.</p>
+                    <p>Il a participé activement à diverses tâches liées à la gestion des outils numériques, à l'accompagnement des usagers, ainsi qu'à l'organisation et à l'animation de plusieurs ateliers numériques, qu'il a su préparer avec méthode et dynamisme. Il a également effectué de la maintenance de premier niveau sur l'ensemble du parc informatique.</p>
+                    <p>Maxence a fait preuve de qualités humaines indéniables : sens de l'écoute, esprit d'équipe, mais aussi autonomie et sens des responsabilités. Son passage dans notre structure a été à la fois bénéfique pour notre service et très prometteur pour son avenir professionnel.</p>
+                    <p>Je suis convaincue que Maxence saura tirer pleinement parti d'une formation dans votre établissement, et qu'il s'y investira avec la même motivation et la même rigueur que celles qu'il a manifestées chez nous.</p>
+                    <p><strong>Cordialement,</strong></p>
+                    <p><strong>Farida Zariouh</strong><br>Responsable de la médiathèque<br>Médiathèque de Limay</p>
+                </div>
+                <a href="#" class="btn" style="background:#28a745;">Télécharger la lettre (PDF)</a>
+            </div>
+        </section>
+
+        <!-- PARCOURS ACADÉMIQUE -->
+        <section id="parcours">
+            <h2>Parcours Académique</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="card">
+                        <strong>ENSITECH – Cergy</strong><br>
+                        <strong>2025 - 2026 :</strong> 2<sup>ème</sup> année en alternance – BTS SIO SISR<br>
+                        <strong>2024 - 2025 :</strong> 1<sup>ère</sup> année en initiale – BTS SIO SISR
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="card">
+                        <strong>Lycée Condorcet – Limay</strong><br>
+                        Baccalauréat Général<br>
+                        Spécialités : Sciences numériques et informatique / Anglais monde contemporain
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BTS SIO -->
+        <section id="bts">
+            <h2>BTS SIO</h2>
+            <div class="card">
+                <h3 style="margin-bottom: 1rem;">Brevet de Technicien Supérieur Services Informatiques aux Organisations – Option SISR</h3>
+                <p>Le BTS SIO forme des techniciens supérieurs capables de répondre aux besoins informatiques des organisations. L’option <strong>SISR (Solutions d’Infrastructure, Systèmes et Réseaux)</strong> me permet de maîtriser :</p>
+                <ul style="margin-top: 1rem; columns: 2; gap: 2rem;">
+                    <li>Administration de systèmes (Windows Server, Linux)</li>
+                    <li>Conception et configuration de réseaux (Cisco Packet Tracer, OSPF, RIP)</li>
+                    <li>Virtualisation (VMware Workstation)</li>
+                    <li>Sécurité informatique et protocoles (HTTP/HTTPS, TCP/IP)</li>
+                    <li>Bases de données (SQL) et développement (Python, Java)</li>
+                    <li>Gestion de projets avec Gantt Project</li>
+                </ul>
+                <p style="margin-top: 1.5rem; font-weight: 500;">En 2<sup>ème</sup> année en alternance, je consolide ces compétences en entreprise pour une insertion professionnelle réussie.</p>
+            </div>
+        </section>
+
+        <!-- COMPÉTENCES TECHNIQUES -->
+        <section id="competences">
+            <h2>Compétences Techniques</h2>
+            <div class="skills-grid">
+                <div class="skill-item">Cisco Packet Tracer</div>
+                <div class="skill-item">Protocoles HTTP/HTTPS, TCP/IP</div>
+                <div class="skill-item">Routage (OSPF, RIP)</div>
+                <div class="skill-item">VMware Workstation</div>
+                <div class="skill-item">Windows Server 2019</div>
+                <div class="skill-item">Python • SQL • Java</div>
+                <div class="skill-item">Linux • Windows 7/8/10/11 • MacOS</div>
+                <div class="skill-item">GitHub • Microsoft Office</div>
+                <div class="skill-item">Installation &amp; maintenance PC</div>
+                <div class="skill-item">Gantt Project</div>
+            </div>
+        </section>
+
+        <!-- MES DOCUMENTATIONS -->
+        <section id="docs">
+            <h2>Mes Documentations</h2>
+            <div class="card">
+                <p>Voici mes principaux documents professionnels et académiques :</p>
+                <ul style="margin-top: 1.5rem; line-height: 2.2;">
+                    <li><strong>CV Stage.pdf</strong> – Version complète et actualisée (disponible en téléchargement)</li>
+                    <li><strong>Lettre de recommandation</strong> – Farida Zariouh, Responsable Médiathèque de Limay (juillet 2025)</li>
+                    <li><strong>Projets BTS SIO</strong> – Dossiers techniques en cours (réseaux, virtualisation, sécurité)</li>
+                    <li><strong>GitHub</strong> : <a href="https://github.com/S-oZo" target="_blank">https://github.com/S-oZo</a> (en cours de remplissage – premiers projets BTS bientôt en ligne)</li>
+                </ul>
+                <div style="margin-top: 2rem; text-align: center;">
+                    <a href="CV_Stage.pdf" class="btn" style="background:#28a745;">Télécharger mon CV</a>
+                    <a href="#" class="btn" style="margin-left: 1rem;">Télécharger la lettre de recommandation</a>
+                </div>
+                <p style="margin-top: 2rem; font-size: 0.95rem; color: #666;">Mes documentations techniques (rapports de TP, schémas Packet Tracer, scripts Python/SQL) seront progressivement publiées sur GitHub.</p>
+            </div>
+        </section>
+
+        <!-- VEILLE TECHNOLOGIQUE -->
+        <section id="veille">
+            <h2>Veille Technologique</h2>
+            <div class="card">
+                <p>En tant qu’étudiant en BTS SIO SISR, je suis en veille permanente sur les évolutions du secteur des infrastructures et réseaux.</p>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+                    <div style="background:#f8f9fa; padding:1.5rem; border-radius:10px;">
+                        <strong>Thèmes suivis :</strong>
+                        <ul>
+                            <li>Évolution des protocoles de routage (OSPF, RIP) et SDN</li>
+                            <li>Virtualisation et conteneurs (VMware, Docker – découverte en cours)</li>
+                            <li>Sécurité des infrastructures (Zero Trust, mises à jour Windows Server)</li>
+                            <li>Cloud hybride et solutions Cisco</li>
+                        </ul>
+                    </div>
+                    <div style="background:#f8f9fa; padding:1.5rem; border-radius:10px;">
+                        <strong>Sources de veille :</strong>
+                        <ul>
+                            <li>Documentation Cisco NetAcad</li>
+                            <li>Blog VMware &amp; Microsoft Learn</li>
+                            <li>Communauté GitHub &amp; forums Reddit (r/networking, r/sysadmin)</li>
+                            <li>Newsletter THWACK &amp; sites français (IT Connect, Journal du Net)</li>
+                        </ul>
+                    </div>
+                </div>
+                <p style="margin-top: 2rem; font-size: 0.95rem;">Je mets à jour cette section régulièrement avec des synthèses de mes lectures et tests pratiques.</p>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact">
+            <h2>Contact</h2>
+            <div class="card" style="text-align: center;">
+                <p><strong>Maxence Bakana</strong></p>
+                <div class="contact-info">
+                    <p><strong>📍</strong> Limay (78520) – France</p>
+                    <p><strong>📞</strong> <a href="tel:0601448951">06 01 44 89 51</a></p>
+                    <p><strong>✉️</strong> <a href="mailto:bknmaxence@gmail.com">bknmaxence@gmail.com</a></p>
+                </div>
+                <div style="margin-top: 2rem;">
+                    <a href="https://www.linkedin.com/in/maxence-bakana-b48536273/" target="_blank" class="btn" style="background:#0a66c2;">LinkedIn</a>
+                    <a href="https://github.com/S-oZo" target="_blank" class="btn" style="margin-left: 1rem;">GitHub</a>
+                </div>
+                <p style="margin-top: 2.5rem; font-size: 0.95rem;">Disponible pour un stage Janvier-Février 2026 • Permis B + véhicule</p>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Maxence Bakana – Portfolio BTS SIO SISR</p>
+        <p style="margin-top: 1rem; opacity: 0.7;">Créé avec passion pour mes futures opportunités professionnelles</p>
+    </footer>
+
+    <script>
+        // Smooth scroll pour les ancres
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', e => {
+                e.preventDefault();
+                const target = document.querySelector(link.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>
